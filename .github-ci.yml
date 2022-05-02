@@ -1,0 +1,18 @@
+build-job:
+    stage: build
+    script: 
+        - echo "Hello!! Build stage!"
+
+test-job:
+    stage: test
+    script: 
+        - echo "Tested successfully!"
+
+deploy-non-prod: 
+    stage: deploy
+    script: 
+        - sleep 15
+        - echo "Deployed to non-prod"
+    environment:
+        name: Non-PROD
+    when: manual
